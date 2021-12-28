@@ -1,0 +1,140 @@
+:root {
+    --primary-very-dark-blue: hsl(233, 47%, 7%);
+    --primary-dark-desaturated-blue: hsl(244, 38%, 16%);
+    --primary-soft-violet: hsl(277, 64%, 61%);
+    --neutral-white: hsl(0, 0%, 100%);
+    --neutral-slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+    --neutral-slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    color: hsl(0, 0%, 100%); 
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(233, 47%, 7%);
+}
+
+.card{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(244, 38%, 16%);
+    border-radius: 10px;
+}
+
+.card-img{
+    position: relative;
+}
+
+.img{
+    content:url('./images/image-header-mobile.jpg');
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.img-color{
+    position: absolute;
+    background-color: hsl(277, 64%, 61%);
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 10px 10px 0 0;
+    filter: brightness(0.8);
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 2em;
+}
+
+.card-title{
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.card-title span{
+    color: hsl(277, 64%, 61%); 
+}
+
+.card-description{
+    color: hsla(0, 0%, 100%, 0.6);
+    font-size: .9em;
+}
+
+.card-info h2{
+    margin-top: 20px;
+}
+
+.card-info p{
+    color: hsla(0, 0%, 100%, 0.6);
+    font-family: 'Lexend Deca', sans-serif;
+    padding-top: 0.3rem;
+    font-size: 0.7em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+@media(min-width: 576px){
+    .card{
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .card-img{
+        order: 2;
+    }
+
+    .img{
+        content: url('./images/image-header-desktop.jpg');
+    }
+
+    .img, 
+    .img-color{
+        border-radius: 0 10px 10px 0;
+    }
+
+    .card-title{
+        padding: 0 2rem;
+        font-size: 2rem;
+    }
+
+    .card-content{
+        text-align: left;
+    }
+
+    .card-description{
+        padding: 0.5em 2rem;
+        padding-right: 5rem;
+        line-height: 1.7;
+    }
+
+    .card-info{
+        display: flex;
+        justify-content: space-between;
+        padding: 1em 7em 0 2em;
+    }
+
+    .card-info p{
+        letter-spacing: .2em;
+    }
+}
